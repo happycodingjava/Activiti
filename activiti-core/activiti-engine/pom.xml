@@ -166,7 +166,6 @@
             <exclude>**/*TestCase.java</exclude>
             <exclude>**/RepeatingServiceTaskTest.java</exclude>
           </excludes>
-          <runOrder>alphabetical</runOrder>
         </configuration>
       </plugin>
       <plugin>

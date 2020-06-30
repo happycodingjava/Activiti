@@ -8,18 +8,9 @@ stages:
   
 jobs:
   include:
-  - name: Verify build
-    stage: verify
+  - name: Reverse and Random order tests
+    stage: test
     script:
-    - mvn verify -B
-    
-  - name: Create a tag deploy to nexus run updatebot
-    stage: tag_deploy_updatebot
-    script: |
-      mvn versions:set -DnewVersion=$(cat VERSION) -DprocessAllModules=true -DgenerateBackupPoms=false 
-      git add --all
-      git commit -m "Release $(cat VERSION)" --allow-empty
-      git tag -fa v$(cat VERSION) -m "Release version $(cat VERSION)"
-      git push -f -q https://${GITHUB_TOKEN}@github.com/Activiti/Activiti.git v$(cat VERSION)
-      mvn clean deploy -DskipTests
-      export VERSION=$(cat VERSION)| make updatebot/push-version
+    - mvn test -Dsurefire.runOrder=reversealphabetical
+    - mvn test -Dsurefire.runOrder=random
+

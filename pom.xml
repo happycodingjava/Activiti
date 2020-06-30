@@ -220,7 +220,7 @@
     <maven-resources-plugin.version>3.1.0</maven-resources-plugin.version>
     <maven-site-plugin.version>3.9.0</maven-site-plugin.version>
     <maven-source-plugin.version>3.2.1</maven-source-plugin.version>
-    <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
+    <maven-surefire-plugin.version>3.0.0-M5</maven-surefire-plugin.version>
     <spring-boot.version>2.2.8.RELEASE</spring-boot.version>
     <versions-maven-plugin.version>2.7</versions-maven-plugin.version>
 
@@ -601,7 +601,6 @@ limitations under the License.
             <exclude>**/*TestCase.java</exclude>
             <exclude>**/*IT.java</exclude>
           </excludes>
-          <runOrder>alphabetical</runOrder>
         </configuration>
       </plugin>
       <plugin>

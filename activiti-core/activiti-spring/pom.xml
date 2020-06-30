@@ -236,7 +236,6 @@
                 <!-- https://activiti.atlassian.net/browse/ACT-485 -->
                 <exclude>**/HistoricTaskInstanceUpdateTest.java</exclude>
               </excludes>
-              <runOrder>alphabetical</runOrder>
             </configuration>
           </plugin>
         </plugins>
